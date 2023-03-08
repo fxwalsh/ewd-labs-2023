@@ -1,6 +1,8 @@
 // See https://containers.dev/implementors/json_reference/ for configuration reference
 {
 	"name": "EWD Labs",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
