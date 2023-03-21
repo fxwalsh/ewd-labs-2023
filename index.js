@@ -1,17 +1,19 @@
 // Load the http module to create an http server.
-import http from 'http';
-import dotenv from 'dotenv'
+import createRouter from './src/routes/userRouter';
+import buildDependencies from "./src/config/dependencies";
+import express from 'express';
+import dotenv from 'dotenv';
 
 dotenv.config()
+const dependencies = buildDependencies();
 
 const port = process.env.PORT
-// Configure our HTTP server to respond with Hello World to all requests.
-const server = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello EWD');
+
+const app = express();
+app.use(express.json())
+
+app.use('/api/users', createRouter(dependencies));
+
+app.listen(port, () => {
+  console.info(`Server running at ${port}`);
 });
-
-server.listen(port);
-
-// Put a friendly message on the terminal
-console.log(`Server running at ${port}`);
