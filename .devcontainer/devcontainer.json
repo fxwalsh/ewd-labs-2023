@@ -1,12 +1,4 @@
-// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "EWD Labs",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	//"build": {
-	//	"dockerfile": "Dockerfile"
-	//},
-
-  "remoteUser": "node"
+	"name": "ewd-labs-2023",
+	"image":"mcr.microsoft.com/devcontainers/javascript-node:0-18"
 }
