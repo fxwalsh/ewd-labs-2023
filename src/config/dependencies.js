@@ -1,8 +1,11 @@
 import InMemoryRepository from '../repositories/InMemoryRepository';
+import userSchema from '../validators/userSchema';
 
 const buildDependencies = () => {
   const dependencies = {
   };
+
+  dependencies.userSchema = userSchema;
 
   if (process.env.DATABASE_DIALECT === "in-memory") {
     dependencies.usersRepository = new InMemoryRepository();

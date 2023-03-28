@@ -4,9 +4,9 @@ export default (dependencies) => {
 
     const createUser = async (request, response, next) => {
         // Input
-        const { name, email } = request.body;
+        const { name, email, password, dob, type } = request.body;
         // Treatment
-        const user = await userService.registerUser(name, email, dependencies);
+        const user = await userService.registerUser(name, email, password, dob, type, dependencies);
         //output
         response.status(201).json(user)
     };
