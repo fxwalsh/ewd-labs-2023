@@ -1,7 +1,4 @@
 {
-	"name": "ewd-labs",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"remoteUser": "node"
+	"name": "ewd-labs-2023",
+	"image":"mcr.microsoft.com/devcontainers/javascript-node:0-18"
 }
